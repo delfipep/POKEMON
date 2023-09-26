@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokedex</title>
+  <link rel="shortcut icon" href="./IMG/Poké_Ball_icon.svg" type="image/x-icon">
+  <link rel="stylesheet" href="pokedex.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+<nav>
+  <div class="logo">
+    <img src="./IMG/Poké_Ball_icon.svg" alt="">
+  </div>
+
+  <div class="searchContainer">
+    <input class="search-bar" type="text" id="filtro" placeholder="Buscar Pokémon">
+  </div>
+</nav>
+
+  <div class="hero">
+    <div class="hero-img"></div>
+
+    <div>
+      <p><span>¡Explora el mundo Pokémon!</span><p>
+          Descubre sus estadísticas y secretos en cada carta</p>
+      </p>
+    </div>
+    <button class="scroll-button" onclick="scrollToCards()">VER MAS</button>
+  </div>
+
+  <main>
+
+    
+    <div class="card-container" id="cards">
+      <!-- <p>aca van las cartas</p> -->
+    </div>
+  </main>
+
+  <footer>
+
+    <div class="info-web" id="info">
+      <p>aca va la info del foooter</p>
+    </div>
+
+  </footer>
+
+  <script src="pokedex.js"></script>
+</body>
+
+</html>
