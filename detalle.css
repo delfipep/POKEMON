@@ -74,6 +74,15 @@ h1 {
 .right {
   min-width: 300px;
 width: 35vw;
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+gap: 20px
+}
+
+.right h2 {
+  margin-bottom: 10px ;
 }
 
 .title {
@@ -140,5 +149,20 @@ footer {
     gap: 2vh;
 
   }
+
+  .right {
+  width: 65vw;
+
+  }
+  .poke-stats  {
+    width: 45vw;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    margin: 50px auto;
+    justify-content: space-between;
+  }
+  
+  
   
 }

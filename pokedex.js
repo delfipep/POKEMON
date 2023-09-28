@@ -20,6 +20,44 @@ const tipoColores = {
 };
 
 
+
+const filtroInput = document.getElementById("filtro");
+
+const filtrarPokemon = () => {
+  const filtro = filtroInput.value.toLowerCase(); // Obtén el valor del input en minúsculas
+
+  // Itera a través de las cartas de los Pokémon y muestra u oculta según la búsqueda
+  const cards = document.querySelectorAll(".poke-card");
+  
+  cards.forEach((card) => {
+    const nombrePokemon = card.querySelector("h2").textContent.toLowerCase();
+
+    if (nombrePokemon.includes(filtro)) {
+      card.style.display = "block"; // Muestra la carta si coincide
+    } else {
+      card.style.display = "none"; // Oculta la carta si no coincide
+    }
+  });
+};
+
+// Escucha el evento input para filtrar en tiempo real
+filtroInput.addEventListener("input", filtrarPokemon);// async function listaPokemones() {
+
+// Espera a que el documento HTML se cargue completamente antes de ejecutar el código
+document.addEventListener("DOMContentLoaded", async () => {
+
+  // Aplicar filtro inicial si es necesario
+  filtrarPokemon();
+});
+
+function scrollToCards() {
+  const cardsSection = document.getElementById("cards");
+  cardsSection.scrollIntoView({ behavior: "smooth" }); // Hace scroll suave hacia la sección de las cards
+}
+  
+
+
+
 fetch("./pokemon_data.json")
   .then((respuesta) => respuesta.json())
   .then((datos) => {
@@ -28,8 +66,6 @@ fetch("./pokemon_data.json")
     const cardContainer = document.querySelector("#cards");
     const datosPokemons = JSON.parse(localStorage.getItem("pokemons"));
     console.log(datosPokemons);
-
-    
 
 
     if (datosPokemons) {

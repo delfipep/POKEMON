@@ -90,11 +90,11 @@ fetch("./pokemon_data.json")
                   </div>
                 </div>
                     <div class="species">
-                <h3>Species:</h3>
+                <h2>Species:</h2>
                 <p>${pokemon.species}</p>
               </div>
               <div class="description">
-                <h3>Description:</h3>
+                <h2>Description:</h2>
                 <p>${pokemon.description}</p>
               </div>
             </div>
