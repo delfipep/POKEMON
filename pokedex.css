@@ -198,7 +198,17 @@ nav {
   color: #666;
 }
 
-footer {
+.footer-content {
   height: 600px;
   background-color: black;
+  margin-top: 15%;
+  
+}
+
+.footer-content p {
+
+color: #ccc;
+text-align: center;
+font-size: 30px;
+text-transform: uppercase;
 }

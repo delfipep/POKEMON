@@ -114,7 +114,14 @@ fetch("./pokemon_data.json")
                           });
     }
 });
-
+const footerContainer = document.createElement("footer");
+footerContainer.innerHTML = `
+  <div class="footer-content">
+  
+    <p>¡Gracias por tu visita!</p>
+  </div>
+`;
+document.body.appendChild(footerContainer);
 
 function mostrarDetallesPokemon(pokemon) {
   //Redireccionar a otra página para mostrar los detalles

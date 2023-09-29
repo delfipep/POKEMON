@@ -19,9 +19,17 @@ const tipoColores = {
   fairy: "#EE99AC",
 };
 
+
 // Obtener el ID del Pokémon de la URL
 const urlParams = new URLSearchParams(window.location.search);
 const pokemonId = urlParams.get("id");
+
+const volverButton = document.getElementById("volver");
+volverButton.addEventListener("click", () => {
+  // Redireccionar al usuario a la página principal
+  window.location.href = "pokedex.html"; // Reemplaza con la URL correcta de tu página principal
+});
+
 
 // Recuperar datos del Pokémon desde tu JSON o API
 // Reemplaza esto con tu propia lógica para cargar los detalles del Pokémon
@@ -101,7 +109,19 @@ fetch("./pokemon_data.json")
         </div>
       `;
     }
+
   })
+  
+  
   .catch((error) => {
     console.error("Error al cargar los detalles del Pokémon:", error);
   });
+
+  const footerContainer = document.createElement("footer");
+  footerContainer.innerHTML = `
+    <div class="footer-content">
+    
+      <p>¡Gracias por tu visita!</p>
+    </div>
+  `;
+  document.body.appendChild(footerContainer);
