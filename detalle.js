@@ -27,7 +27,7 @@ const pokemonId = urlParams.get("id");
 const volverButton = document.getElementById("volver");
 volverButton.addEventListener("click", () => {
   // Redireccionar al usuario a la página principal
-  window.location.href = "pokedex.html"; // Reemplaza con la URL correcta de tu página principal
+  window.location.href = "index.html"; // Reemplaza con la URL correcta de tu página principal
 });
 
 
