@@ -122,6 +122,7 @@ fetch("./pokemon_data.json")
     <div class="footer-content">
     
       <p>¡Gracias por tu visita!</p>
+      <img src="/IMG/Pikachu-8.png"
     </div>
   `;
   document.body.appendChild(footerContainer);

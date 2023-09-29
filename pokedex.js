@@ -117,8 +117,9 @@ fetch("./pokemon_data.json")
 const footerContainer = document.createElement("footer");
 footerContainer.innerHTML = `
   <div class="footer-content">
-  
-    <p>¡Gracias por tu visita!</p>
+  <p>¡Gracias por tu visita!</p>
+  <img src="./IMG/Pikachu-8.png"
+    
   </div>
 `;
 document.body.appendChild(footerContainer);
@@ -127,3 +128,40 @@ function mostrarDetallesPokemon(pokemon) {
   //Redireccionar a otra página para mostrar los detalles
   window.location.href = `pokedex.html?id=${pokemon.id}`;
 }
+
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+// Agregar un evento click al botón de "Volver arriba"
+scrollToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
+
+// Agregar un evento scroll para mostrar u ocultar el botón de "Volver arriba"
+window.addEventListener("scroll", () => {
+  const scrollPosition = window.scrollY;
+
+  // Mostrar u ocultar el botón de "Volver arriba" según la posición del scroll
+  if (scrollPosition > 300) {
+    scrollToTopBtn.style.display = "block";
+  } else {
+    scrollToTopBtn.style.display = "none";
+  }
+
+  // Actualizar la posición de la barra de desplazamiento
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercentage = (scrollPosition / maxScroll) * 100;
+  const scrollBar = document.querySelector(".scroll-bar");
+  scrollBar.style.height = scrollPercentage + "%";
+});
+
+// Evento para desplazarse a la posición del click en la barra de desplazamiento
+document.querySelector(".scroll-bar").addEventListener("click", (e) => {
+  const clickY = (e.clientY / window.innerHeight) * document.documentElement.scrollHeight;
+  window.scrollTo({
+    top: clickY,
+    behavior: "smooth",
+  });
+});
